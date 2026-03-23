@@ -97,9 +97,9 @@ Ele deve ser utilizado apenas como ferramenta de apoio.
 
 ## 👥 Equipe
 
-* **Luccas Santana de Abreu** – Scrum Master
-* **Elson de Souza Santos** – Product Owner
-* **Thalis Cleiton Sousa Cruz** – Developer
+* **Luccas Santana de Abreu**
+* **Elson de Souza Santos** 
+* **Thalis Cleiton Sousa Cruz**
 
 ---
 
