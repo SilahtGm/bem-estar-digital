@@ -1,4 +1,4 @@
-# 🧠 Wellness Manager App
+# 🧠 Bem Estar Digital
 
 Sistema de gerenciamento de bem-estar e saúde focado em rotinas, lembretes e recompensas para incentivar hábitos saudáveis de forma interativa e acessível.
 
@@ -6,7 +6,7 @@ Sistema de gerenciamento de bem-estar e saúde focado em rotinas, lembretes e re
 
 ## 📌 Sobre o projeto
 
-O **Wellness Manager App** foi desenvolvido com o objetivo de ajudar usuários a melhorarem sua saúde física e emocional por meio de um sistema dinâmico, intuitivo e motivador.
+O **Bem Estar Digital** foi desenvolvido com o objetivo de ajudar usuários a melhorarem sua saúde física e emocional por meio de um sistema dinâmico, intuitivo e motivador.
 
 A proposta é transformar o uso frequente da tecnologia em uma ferramenta positiva, incentivando mudanças de hábitos de forma leve e divertida.
 
@@ -86,7 +86,7 @@ Ele deve ser utilizado apenas como ferramenta de apoio.
 
 ## 🛠️ Tecnologias (sugestão)
 
-- Kotlin / Android (Jetpack Compose)
+- .net MAUI
 - Banco de dados local
 - Ferramentas gratuitas
 
