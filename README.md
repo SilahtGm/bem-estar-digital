@@ -68,7 +68,7 @@ Para aumentar o engajamento, o sistema utiliza elementos de incentivo digital:
 
 ---
 
-## ⚠️ Aviso Legal
+## ⚠️ Aviso
 Este software é uma ferramenta de apoio ao bem-estar e **não substitui** o aconselhamento, diagnóstico ou tratamento de um profissional de saúde qualificado. O app emitirá alertas constantes sobre esta restrição.
 
 ---
