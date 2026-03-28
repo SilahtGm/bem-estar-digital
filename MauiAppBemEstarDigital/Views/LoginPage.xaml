@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.LoginPage"
+             Title="Login"
+             BackgroundColor="#f0f4f7">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20" VerticalOptions="Center">
+
+      
+            <Label Text="Bem-vindo ao Bem Estar Digital!" 
+                   FontSize="32" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#2c3e50"/>
+
+            <Label Text="Faça login na sua conta" 
+                   FontSize="16" 
+                   HorizontalOptions="Center"
+                   TextColor="#7f8c8d"/>
+
+            <!-- Campo Email -->
+            <Entry Placeholder="Email"
+                   Keyboard="Email"
+                   TextColor="#2c3e50"
+                   BackgroundColor="White"
+                   HeightRequest="50"
+                  
+                   />
+
+            <!-- Campo Senha -->
+            <Entry Placeholder="Senha"
+                   IsPassword="True"
+                   TextColor="#2c3e50"
+                   BackgroundColor="White"
+                   HeightRequest="50"
+                
+                   />
+
+            <!-- Botão Login -->
+            <Button Text="Login"
+                    BackgroundColor="#3498db"
+                    TextColor="White"
+                    HeightRequest="50"
+                    FontAttributes="Bold"
+                    />
+
+            <!-- Criar Conta -->
+            <HorizontalStackLayout HorizontalOptions="Center">
+                <Label Text="Não tem uma conta?" TextColor="#7f8c8d"/>
+                <Button Text="Criar Conta" 
+                        Clicked="Criar_Conta_Clicked"
+                        BackgroundColor="Transparent"
+                        TextColor="#3498db"
+                        FontAttributes="Bold"
+                         CornerRadius="10"
+                         Padding="10"
+                        />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
