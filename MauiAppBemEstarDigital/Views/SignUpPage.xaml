@@ -21,7 +21,8 @@
                    TextColor="#7f8c8d"/>
 
             <!-- Campo Email -->
-            <Entry Placeholder="Email"
+            <Entry x:Name="txt_email"
+                   Placeholder="Email"
                    Keyboard="Email"
                    TextColor="#2c3e50"
                    BackgroundColor="White"
@@ -30,7 +31,8 @@
                    />
 
             <!-- Campo Senha -->
-            <Entry Placeholder="Senha"
+            <Entry x:Name="txt_senha"
+                   Placeholder="Senha"
                    IsPassword="True"
                    TextColor="#2c3e50"
                    BackgroundColor="White"
@@ -39,7 +41,8 @@
                    />
 
             <!-- Confirmar Senha -->
-            <Entry Placeholder="Confirmar Senha"
+            <Entry x:Name="txt_confirma_senha"
+                   Placeholder="Confirmar Senha"
                    IsPassword="True"
                    TextColor="#2c3e50"
                    BackgroundColor="White"
@@ -48,6 +51,7 @@
 
             <!-- Botão Registrar -->
             <Button Text="Registrar"
+                    Clicked="RegistrarButton_Clicked"
                     BackgroundColor="#3498db"
                     TextColor="White"
                     HeightRequest="50"
