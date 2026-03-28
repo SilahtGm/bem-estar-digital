@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppBemEstarDigital.Views.HomePage"
-             Title="HomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Bem-Estar Digital"
+             BackgroundColor="#f0f4f7">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem 
+        Text="Sair"
+        Clicked="LogOut_Clicked"
+        />
+
+    </ContentPage.ToolbarItems>
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
 </ContentPage>

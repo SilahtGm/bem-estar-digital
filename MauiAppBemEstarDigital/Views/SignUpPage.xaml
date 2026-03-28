@@ -60,14 +60,18 @@
                     />
 
             <!-- Voltar para Login -->
-            <HorizontalStackLayout HorizontalOptions="Center">
-                <Label Text="Já tem uma conta?" TextColor="#7f8c8d"/>
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" VerticalOptions="Center">
+                <Label Text="Já tem uma conta?" 
+           TextColor="#7f8c8d"
+           VerticalOptions="Center"/>
                 <Button Text="Login" 
-                        Clicked="Login_Clicked"
-                        BackgroundColor="Transparent"
-                        TextColor="#3498db"
-                        FontAttributes="Bold"
-                        />
+            Clicked="Login_Clicked"
+            BackgroundColor="Transparent"
+            TextColor="#3498db"
+            FontAttributes="Bold"
+            Padding="0"
+            HeightRequest="30"
+            VerticalOptions="Center"/>
             </HorizontalStackLayout>
 
         </VerticalStackLayout>

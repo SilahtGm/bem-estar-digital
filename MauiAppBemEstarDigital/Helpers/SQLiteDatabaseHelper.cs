@@ -14,11 +14,6 @@ namespace MauiAppBemEstarDigital.Helpers
             _conn.CreateTableAsync<Usuario>().Wait();
         }
 
-        public Task<int> Insert(Usuario u)
-        {
-            return _conn.InsertAsync(u);
-        }
-
 
         public async Task<Usuario> LoginAsync(string email, string senha)
         {
@@ -39,11 +34,11 @@ namespace MauiAppBemEstarDigital.Helpers
 
             if (existente != null)
             {
-                // Usuário já existe
+                // Se o usuário já existe
                 return false;
             }
 
-            // Insere o novo usuário
+            // Se este usuário ainda nao existe, insere o novo usuário
             await _conn.InsertAsync(u);
             return true;
         }
