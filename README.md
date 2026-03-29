@@ -20,9 +20,9 @@ Nosso objetivo é oferecer uma maneira versátil e dinâmica para o gerenciament
 O desenvolvimento foi dividido por prioridades de valor de negócio e esforço estimado:
 
 ### 🔴 Prioridade 1: Essenciais
-* **Lembretes Diários:** Hidratação, sono, leitura e exercícios (Estimativa: 4-5 dias).
-* **Gestão de Peso:** Registro diário com cálculo automático de IMC (Estimativa: 3 dias).
-* **Histórico de Progresso:** Visualização completa das atividades ao longo do tempo (Estimativa: 5 dias).
+* **Lembretes Diários:** Hidratação, sono, leitura e exercícios.
+* **Gestão de Peso:** Registro diário com cálculo automático de IMC.
+* **Histórico de Progresso:** Visualização completa das atividades ao longo do tempo.
 * **Personalização:** Configuração de notificações e horários flexíveis.
 
 ### 🟡 Prioridade 2: Importantes
@@ -35,10 +35,8 @@ O desenvolvimento foi dividido por prioridades de valor de negócio e esforço e
 
 ---
 
-## 🎮 Diferenciais e Gamificação
+## 🎮 Diferenciais
 Para aumentar o engajamento, o sistema utiliza elementos de incentivo digital:
-* **Moeda Digital Interna:** Conquistada ao completar desafios e metas de rotina.
-* **Loja de Personalização:** Uso das moedas para elementos motivacionais dentro do app.
 * **Acompanhamento Holístico:** Ferramentas para saúde física e emocional (meditação/conteúdos relaxantes).
 
 ---
