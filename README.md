@@ -51,7 +51,7 @@ Para aumentar o engajamento, o sistema utiliza elementos de incentivo digital:
 * Atendimento ou chat com profissionais de saúde.
 * Versão para Desktop.
 * IA para recomendações ou integração com planos de saúde e clínicas.
-* Gamificação avançada (multiplayer ou rankings globais).
+
 
 ---
 
@@ -62,7 +62,6 @@ Para aumentar o engajamento, o sistema utiliza elementos de incentivo digital:
 | **Luccas Santana de Abreu** | Scrum Master | Garantir o processo Scrum e remover impedimentos. |
 | **Thalis Cleiton Sousa Cruz** | Dev Team | Desenvolvimento de funcionalidades e design de interface. |
 
-**Orientador:** Cesar Cari Eliseu.
 
 ---
 
