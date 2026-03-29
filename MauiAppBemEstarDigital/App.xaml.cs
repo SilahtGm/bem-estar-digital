@@ -19,6 +19,7 @@ namespace MauiAppBemEstarDigital
                             Environment.SpecialFolder.LocalApplicationData),
                         "banco_sqlite_saude.db3");
 
+
                     _db = new SQLiteDatabaseHelper(path);
                 }
 
