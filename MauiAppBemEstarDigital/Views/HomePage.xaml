@@ -6,18 +6,56 @@
              BackgroundColor="#f0f4f7">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem 
-        Text="Sair"
-        Clicked="LogOut_Clicked"
-        />
-
+        <ToolbarItem Text="Sair" Clicked="LogOut_Clicked"/>
     </ContentPage.ToolbarItems>
-    
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="25">
 
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30">
+
+            <!-- Cabeçalho -->
+            <Label Text="Bem-vindo ao Bem Estar Digital!"
+       FontSize="28"
+       FontAttributes="Bold"
+       HorizontalOptions="Center"
+       TextColor="#2c3e50"/>
+
+            <!-- Subtítulo explicativo -->
+            <Label Text="Calcule seu IMC e consulte seu histórico de registros"
+       FontSize="16"
+       HorizontalOptions="Center"
+       TextColor="#7f8c8d"/>
+
+
+            <!-- Ação rápida: Registrar IMC -->
+            <Label Text="Registre um novo IMC rapidamente"
+            FontSize="16"
+            HorizontalOptions="Start"
+             TextColor="#7f8c8d"/>
+            
+            <Button Text="Registrar Novo IMC" BackgroundColor="#3498db" TextColor="White" HeightRequest="50" FontAttributes="Bold" Clicked="Imc_Clicked"/>
+
+            <!-- Histórico de IMCs em cards horizontais -->
+            <CollectionView x:Name="cvHistoricoIMC" HeightRequest="180" Margin="0,10,0,0">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="15" Padding="15" Margin="5" HasShadow="True" BackgroundColor="#ecf0f1" WidthRequest="150">
+                            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="{Binding IMC, StringFormat='IMC: {0:0.0}'}" FontSize="20" FontAttributes="Bold" TextColor="#3498db" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Status}" FontSize="14" TextColor="#e74c3c" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Peso, StringFormat='Peso: {0} kg'}" FontSize="14" TextColor="#34495e" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Altura, StringFormat='Altura: {0:0.00} m'}" FontSize="14" TextColor="#34495e" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Idade, StringFormat='Idade: {0} Anos'}" FontSize="14" TextColor="#34495e" HorizontalOptions="Center"/>
+                                <Label Text="{Binding Data, StringFormat='Data: {0:dd/MM/yyyy}'}" FontSize="12" TextColor="#7f8c8d" HorizontalOptions="Center"/>
+                            </VerticalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

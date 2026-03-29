@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.InsertIMC"
+             Title="Registrar Peso"
+             BackgroundColor="#f0f4f7">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+
+            <Label Text="Registrar Novo Peso" FontSize="28" FontAttributes="Bold" TextColor="#2c3e50" HorizontalOptions="Center"/>
+            <Label Text="Preencha os dados abaixo:" FontSize="16" TextColor="#7f8c8d" HorizontalOptions="Center"/>
+
+            <!-- Peso -->
+            <Entry x:Name="txt_peso" Placeholder="Peso (kg)" Keyboard="Numeric" TextColor="#2c3e50" BackgroundColor="White" HeightRequest="50"/>
+
+            <!-- Altura -->
+            <StackLayout>
+                <Label x:Name="lblAltura" Text="Altura: 1,70 m" TextColor="#2c3e50"/>
+                <Slider x:Name="slider_altura"
+            Minimum="1.40"
+            Maximum="2.10"
+            Value="1.70"
+            ValueChanged="Slider_Altura_ValueChanged"/>
+            </StackLayout>
+
+            <!-- Idade -->
+            <Entry x:Name="txt_idade" Placeholder="Idade (anos)" Keyboard="Numeric" TextColor="#2c3e50" BackgroundColor="White" HeightRequest="50"/>
+
+            <!-- Botão de registrar -->
+            <Button Text="Registrar" BackgroundColor="#3498db" TextColor="White" HeightRequest="50" FontAttributes="Bold" Clicked="Registrar_Clicked"/>
+            <Button Text="Cancelar" BackgroundColor="#c0392b" TextColor="White" HeightRequest="50" FontAttributes="Bold" Clicked="Cancelar_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,4 +1,5 @@
 ﻿using MauiAppBemEstarDigital.Helpers;
+using MauiAppBemEstarDigital.Models;
 namespace MauiAppBemEstarDigital
 {
     public partial class App : Application
@@ -24,6 +25,7 @@ namespace MauiAppBemEstarDigital
             }
         }
 
+        public static Usuario UsuarioLogado { get; set; }
 
         public App()
         {

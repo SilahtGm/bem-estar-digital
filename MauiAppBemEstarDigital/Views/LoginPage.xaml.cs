@@ -39,6 +39,9 @@ public partial class LoginPage : ContentPage
 
         if (usuario != null)
         {
+            // Salva o usuário logado
+            App.UsuarioLogado = usuario;
+
             // Login bem-sucedido
             await DisplayAlert("Sucesso", "Login realizado!", "OK");
 

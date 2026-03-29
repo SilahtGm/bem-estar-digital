@@ -7,17 +7,12 @@ namespace MauiAppBemEstarDigital.Models
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-
-       
-        public int U_Id { get; set; }
-
-       
+        public int U_Id { get; set; }   
+        public string Status { get; set; }
         public double Peso { get; set; }
-
-       
+        public double Altura { get; set; }
+        public int Idade { get; set; }
         public double IMC { get; set; }
-
-   
         public DateTime Data { get; set; }
     }
 }
