@@ -69,30 +69,58 @@ public partial class LembretesPage : ContentPage
         }
     }
 
-    private async Task Excluir_Lembrete_Clicked(Lembrete lembrete)
+    private async void Excluir_Clicked(object sender, EventArgs e)
     {
         try
         {
-            var service = new NotificacaoService();
+            // Pega o botão que disparou o evento
+            var button = sender as Button;
+            if (button == null)
+                return;
 
-            //  Desativa
+            // Pega o Lembrete associado ao item do CollectionView
+            var lembrete = button.BindingContext as Lembrete;
+            if (lembrete == null)
+                return;
+
+            // Confirmação
+            bool confirm = await DisplayAlert("Confirmar",
+                "Deseja excluir este lembrete?",
+                "Sim", "Não");
+            if (!confirm)
+                return;
+
+            // Desativa e cancela notificação
             lembrete.Ativo = false;
-
-            //  Cancela notificação
+            var service = new NotificacaoService();
             service.CancelarLembrete(lembrete.Id);
 
             // Remove do banco
             await App.Db.DeletarLembretePorIdAsync(lembrete.Id);
 
-            //  Atualiza lista
-            var lista = await App.Db
-            .ListarLembretesPorUsuarioAsync(App.UsuarioLogado.Id);
+            // Atualiza a lista do CollectionView
+            var lista = await App.Db.ListarLembretesPorUsuarioAsync(App.UsuarioLogado.Id);
             collectionViewLembretes.ItemsSource = lista;
+
+            await DisplayAlert("Sucesso", "Lembrete deletado com sucesso!", "OK");
         }
         catch (Exception ex)
         {
             await DisplayAlert("Erro", ex.Message, "OK");
         }
     }
+    private async void Voltar_Clicked(object sender, EventArgs e)
+    {
 
+        try
+        {
+            await Navigation.PopAsync();
+
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Ops", ex.Message, "OK");
+        }
+
+    }
 }

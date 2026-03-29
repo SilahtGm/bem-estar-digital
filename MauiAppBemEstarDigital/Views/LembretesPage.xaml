@@ -32,13 +32,10 @@
                                 <!-- Horário -->
                                 <TimePicker Time="{Binding Horario}"/>
 
-                                <Button Text="+ Novo Lembrete"
-                                Clicked="Novo_Lembrete_Clicked"
-                                BackgroundColor="Blue"
-                                TextColor="White"/>
+
 
                                 <Button Text="Apagar"
-                                Clicked="Excluir_Lembrete_Clicked"
+                                Clicked="Excluir_Clicked"
                                  BackgroundColor="Red"
                                 TextColor="White"/>
 
@@ -49,11 +46,16 @@
                 </CollectionView.ItemTemplate>
             </CollectionView>
 
-            <!-- Botão salvar -->
-            <Button Text="Salvar Configurações"
-                    Command="{Binding SalvarCommand}"
-                    BackgroundColor="Green"
-                    TextColor="White"/>
+            <Button Text="+ Novo Lembrete"
+                                Clicked="Novo_Lembrete_Clicked"
+                                BackgroundColor="Blue"
+                                TextColor="White"/>
+
+
+            <Button Text="Voltar"
+                                Clicked="Voltar_Clicked"
+                                BackgroundColor="Blue"
+                                TextColor="White"/>
 
         </VerticalStackLayout>
     </ScrollView>

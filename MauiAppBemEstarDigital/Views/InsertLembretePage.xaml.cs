@@ -30,11 +30,6 @@ public partial class InsertLembretePage : ContentPage
                 return;
             }
 
-            if (timePickerHorario.Time == TimeSpan.Zero)
-            {
-                await DisplayAlert("Erro", "Defina um horário válido", "OK");
-                return;
-            }
 
 
             string titulo = txt_titulo.Text.Trim();
@@ -53,6 +48,7 @@ public partial class InsertLembretePage : ContentPage
 
             //  Salvar
             await App.Db.InserirLembreteAsync(lembrete);
+        
 
             //  Notificação
             if (lembrete.Ativo)

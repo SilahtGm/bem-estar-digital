@@ -63,9 +63,10 @@ namespace MauiAppBemEstarDigital.Helpers
             await _conn.InsertAsync(registro);
         }
 
-        public Task<int> InserirLembreteAsync(Lembrete lembrete)
+        public async Task InserirLembreteAsync(Lembrete lembrete)
         {
-            return _conn.InsertAsync(lembrete);
+            await _conn.InsertAsync(lembrete);
+            
         }
 
 
@@ -84,7 +85,7 @@ namespace MauiAppBemEstarDigital.Helpers
 
         public Task<int> DeletarLembretePorIdAsync(int id)
         {
-            return _conn.DeleteAsync<Lembrete>(id);
+            return _conn.Table<Lembrete>().DeleteAsync(i => i.Id == id);
         }
 
     }
