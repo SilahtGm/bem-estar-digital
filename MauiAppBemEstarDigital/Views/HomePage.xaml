@@ -7,6 +7,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Sair" Clicked="LogOut_Clicked"/>
+        <ToolbarItem Text="Lembretes" Clicked="Lembretes_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>

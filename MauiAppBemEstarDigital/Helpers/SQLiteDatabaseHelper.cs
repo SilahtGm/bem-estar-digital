@@ -13,6 +13,7 @@ namespace MauiAppBemEstarDigital.Helpers
             _conn = new SQLiteAsyncConnection(path);
             _conn.CreateTableAsync<Usuario>().Wait();
             _conn.CreateTableAsync<PesoUsuario>().Wait();
+            _conn.CreateTableAsync<Lembrete>().Wait();
         }
 
 
@@ -44,25 +45,48 @@ namespace MauiAppBemEstarDigital.Helpers
             return true;
         }
 
-        
 
-            // Recupera todos os registros do usuário
-            public async Task<List<PesoUsuario>> GetHistoricoIMCAsync(int usuarioId)
-            {
-                var historico = await _conn.Table<PesoUsuario>()
-                                           .Where(x => x.U_Id == usuarioId)
-                                           .OrderByDescending(x => x.Data) // do mais recente para o mais antigo
-                                           .ToListAsync();
-                return historico;
-            }
 
-            // Insere um novo registro de peso/altura/IMC
-            public async Task InserirPesoAsync(PesoUsuario registro)
-            {
-                await _conn.InsertAsync(registro);
-            }
+        // Recupera todos os registros do usuário
+        public async Task<List<PesoUsuario>> GetHistoricoIMCAsync(int usuarioId)
+        {
+            var historico = await _conn.Table<PesoUsuario>()
+                                       .Where(x => x.U_Id == usuarioId)
+                                       .OrderByDescending(x => x.Data) // do mais recente para o mais antigo
+                                       .ToListAsync();
+            return historico;
+        }
+
+        // Insere um novo registro de peso/altura/IMC
+        public async Task InserirPesoAsync(PesoUsuario registro)
+        {
+            await _conn.InsertAsync(registro);
+        }
+
+        public Task<int> InserirLembreteAsync(Lembrete lembrete)
+        {
+            return _conn.InsertAsync(lembrete);
         }
 
 
-    
+        public Task<List<Lembrete>> ListarLembretesPorUsuarioAsync(int usuarioId)
+        {
+            return _conn.Table<Lembrete>()
+                            .Where(l => l.U_Id == usuarioId)
+                            .ToListAsync();
+        }
+
+        public Task<int> AtualizarLembreteAsync(Lembrete lembrete)
+        {
+            return _conn.UpdateAsync(lembrete);
+        }
+
+
+        public Task<int> DeletarLembretePorIdAsync(int id)
+        {
+            return _conn.DeleteAsync<Lembrete>(id);
+        }
+
+    }
+
 }

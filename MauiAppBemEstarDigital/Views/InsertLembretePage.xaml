@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.InsertLembretePage"
+             Title="InsertLembretePage">
+    <VerticalStackLayout Padding="20" Spacing="15">
+
+        <Label Text="Novo Lembrete" FontSize="22"/>
+
+        <Entry Placeholder="Insira o Título" x:Name="txt_titulo" />
+
+        <Entry Placeholder="Insira a Descrição" x:Name="txt_descricao"/>
+
+        <TimePicker x:Name="timePickerHorario" />
+
+        <HorizontalStackLayout>
+            <Label Text="Ativo"/>
+            <Switch x:Name="switchAtivo" IsToggled="True"/>
+        </HorizontalStackLayout>
+
+        <Button Text="Salvar"
+            Clicked="Salvar_Clicked"
+            BackgroundColor="Green"
+            TextColor="White"/>
+
+    </VerticalStackLayout>
+</ContentPage>

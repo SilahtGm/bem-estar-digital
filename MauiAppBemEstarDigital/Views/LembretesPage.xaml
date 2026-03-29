@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.LembretesPage"
+             Title="LembretesPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Lembretes Diários"
+                   FontSize="22"
+                   FontAttributes="Bold" />
+
+            <CollectionView x:Name="collectionViewLembretes">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+
+                        <Frame Padding="10" Margin="5">
+                            <VerticalStackLayout Spacing="10">
+
+                                <Label Text="{Binding Titulo}"
+                                       FontAttributes="Bold"/>
+
+                                <Label Text="{Binding Descricao}"
+                                       FontSize="12"/>
+
+                                <!-- Ativar -->
+                                <HorizontalStackLayout>
+                                    <Label Text="Ativo"/>
+                                    <Switch IsToggled="{Binding Ativo}"/>
+                                </HorizontalStackLayout>
+
+                                <!-- Horário -->
+                                <TimePicker Time="{Binding Horario}"/>
+
+                                <Button Text="+ Novo Lembrete"
+                                Clicked="Novo_Lembrete_Clicked"
+                                BackgroundColor="Blue"
+                                TextColor="White"/>
+
+                                <Button Text="Apagar"
+                                Clicked="Excluir_Lembrete_Clicked"
+                                 BackgroundColor="Red"
+                                TextColor="White"/>
+
+                            </VerticalStackLayout>
+                        </Frame>
+
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Botão salvar -->
+            <Button Text="Salvar Configurações"
+                    Command="{Binding SalvarCommand}"
+                    BackgroundColor="Green"
+                    TextColor="White"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

@@ -8,22 +8,34 @@ namespace MauiAppBemEstarDigital.Views
     public partial class HomePage : ContentPage
     {
 
-        private void LogOut_Clicked(object sender, EventArgs e)
+        private async void LogOut_Clicked(object sender, EventArgs e)
         {
             try
             {
+                // Pergunta ao usuário se tem certeza
+                bool confirmar = await DisplayAlert(
+                    "Sair",
+                    "Tem certeza que deseja sair da conta?",
+                    "Sim",
+                    "Não"
+                );
 
-                // Limpa o usuário logado
-                App.UsuarioLogado = null;
+                if (confirmar)
+                {
+                    // Limpa o usuário logado
+                    App.UsuarioLogado = null;
 
-                Navigation.PushAsync(new Views.LoginPage());
-
+                    // Volta para a LoginPage
+                    await Navigation.PushAsync(new Views.LoginPage());
+                }
+                // Se o usuário clicar em "Não", nada acontece
             }
             catch (Exception ex)
             {
-                DisplayAlert("Ops", ex.Message, "OK");
+                await DisplayAlert("Ops", ex.Message, "OK");
             }
         }
+
         public HomePage()
         {
             InitializeComponent();
@@ -54,6 +66,19 @@ namespace MauiAppBemEstarDigital.Views
             try
             {
                 Navigation.PushAsync(new Views.InsertIMC());
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Ops", ex.Message, "OK");
+            }
+        }
+
+        private void Lembretes_Clicked(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Views.LembretesPage());
 
             }
             catch (Exception ex)
