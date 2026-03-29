@@ -25,13 +25,13 @@
                             <Label Text="{Binding Descricao}"
                                    FontSize="12"/>
 
-                            <HorizontalStackLayout>
-                                <Label Text="Ativo"/>
-                                <Switch IsToggled="{Binding Ativo}"
-                                        Toggled="IsToggled"/>
-                            </HorizontalStackLayout>
+                                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                                    <Label Text="Ativo" VerticalOptions="Center"/>
+                                    <Switch IsToggled="{Binding Ativo}"
+                                    Toggled="IsToggled"/>
+                                </HorizontalStackLayout>
 
-                            <TimePicker Time="{Binding Horario}"/>
+                                <TimePicker Time="{Binding Horario}"/>
 
                             <Button Text="Apagar"
                                     Clicked="Excluir_Clicked"
@@ -51,7 +51,7 @@
 
         <Button Text="Voltar"
                 Clicked="Voltar_Clicked"
-                BackgroundColor="Blue"
+                BackgroundColor="Red"
                 TextColor="White"/>
 
     </VerticalStackLayout>

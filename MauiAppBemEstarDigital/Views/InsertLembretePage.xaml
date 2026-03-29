@@ -13,8 +13,8 @@
 
         <TimePicker x:Name="timePickerHorario" />
 
-        <HorizontalStackLayout>
-            <Label Text="Ativo"/>
+        <HorizontalStackLayout VerticalOptions="Center" Spacing="10">
+            <Label Text="Ativo" VerticalOptions="Center"/>
             <Switch x:Name="switchAtivo" IsToggled="True"/>
         </HorizontalStackLayout>
 
@@ -25,7 +25,7 @@
 
         <Button Text="Cancelar"
      Clicked="Cancelar_Clicked"
-     BackgroundColor="Green"
+     BackgroundColor="Red"
      TextColor="White"/>
 
     </VerticalStackLayout>
