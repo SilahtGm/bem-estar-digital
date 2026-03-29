@@ -3,61 +3,59 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppBemEstarDigital.Views.LembretesPage"
              Title="LembretesPage">
+
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label Text="Lembretes Diários"
-                   FontSize="22"
-                   FontAttributes="Bold" />
+       
 
-            <CollectionView x:Name="collectionViewLembretes">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
+        <Label Text="Lembretes Diários"
+               FontSize="22"
+               FontAttributes="Bold" />
 
-                        <Frame Padding="10" Margin="5">
-                            <VerticalStackLayout Spacing="10">
+        <CollectionView x:Name="collectionViewLembretes">
+            <CollectionView.ItemTemplate ItemSpacing="10">
+                <DataTemplate>
+                    <Frame Padding="10" Margin="5">
+                        <VerticalStackLayout Spacing="10">
 
-                                <Label Text="{Binding Titulo}"
-                                       FontAttributes="Bold"/>
+                            <Label Text="{Binding Titulo}"
+                                   FontAttributes="Bold"/>
 
-                                <Label Text="{Binding Descricao}"
-                                       FontSize="12"/>
+                            <Label Text="{Binding Descricao}"
+                                   FontSize="12"/>
 
-                                <!-- Ativar -->
-                                <HorizontalStackLayout>
-                                    <Label Text="Ativo"/>
-                                    <Switch IsToggled="{Binding Ativo}"/>
-                                </HorizontalStackLayout>
+                            <HorizontalStackLayout>
+                                <Label Text="Ativo"/>
+                                <Switch IsToggled="{Binding Ativo}"
+                                        Toggled="IsToggled"/>
+                            </HorizontalStackLayout>
 
-                                <!-- Horário -->
-                                <TimePicker Time="{Binding Horario}"/>
+                            <TimePicker Time="{Binding Horario}"/>
 
+                            <Button Text="Apagar"
+                                    Clicked="Excluir_Clicked"
+                                    BackgroundColor="Red"
+                                    TextColor="White"/>
 
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
 
-                                <Button Text="Apagar"
-                                Clicked="Excluir_Clicked"
-                                 BackgroundColor="Red"
-                                TextColor="White"/>
+        <Button Text="+ Novo Lembrete"
+                Clicked="Novo_Lembrete_Clicked"
+                BackgroundColor="Blue"
+                TextColor="White"/>
 
-                            </VerticalStackLayout>
-                        </Frame>
+        <Button Text="Voltar"
+                Clicked="Voltar_Clicked"
+                BackgroundColor="Blue"
+                TextColor="White"/>
 
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+    </VerticalStackLayout>
 
-            <Button Text="+ Novo Lembrete"
-                                Clicked="Novo_Lembrete_Clicked"
-                                BackgroundColor="Blue"
-                                TextColor="White"/>
-
-
-            <Button Text="Voltar"
-                                Clicked="Voltar_Clicked"
-                                BackgroundColor="Blue"
-                                TextColor="White"/>
-
-        </VerticalStackLayout>
     </ScrollView>
-    
+
 </ContentPage>

@@ -1,5 +1,6 @@
 ﻿using MauiAppBemEstarDigital.Helpers;
 using MauiAppBemEstarDigital.Models;
+using Plugin.LocalNotification;
 namespace MauiAppBemEstarDigital
 {
     public partial class App : Application

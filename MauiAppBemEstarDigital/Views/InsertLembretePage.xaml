@@ -23,5 +23,10 @@
             BackgroundColor="Green"
             TextColor="White"/>
 
+        <Button Text="Cancelar"
+     Clicked="Cancelar_Clicked"
+     BackgroundColor="Green"
+     TextColor="White"/>
+
     </VerticalStackLayout>
 </ContentPage>

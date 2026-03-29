@@ -10,10 +10,11 @@ public class NotificacaoService
         if (!lembrete.Ativo)
             return;
 
+        var agora = DateTime.Now;
         var horario = DateTime.Today.Add(lembrete.Horario);
 
-        // Garante que não agenda no passado
-        if (horario < DateTime.Now)
+        // Se a hora já passou hoje, agenda para amanhã
+        if (horario <= agora)
         {
             horario = horario.AddDays(1);
         }
@@ -32,7 +33,7 @@ public class NotificacaoService
 
         LocalNotificationCenter.Current.Show(notification); // Agenda a notificação
     }
-
+        
     public void CancelarLembrete(int id)
     {
         LocalNotificationCenter.Current.Cancel(id); // Cancela a notificação pelo ID

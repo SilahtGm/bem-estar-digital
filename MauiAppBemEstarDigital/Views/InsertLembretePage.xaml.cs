@@ -47,15 +47,18 @@ public partial class InsertLembretePage : ContentPage
             };
 
             //  Salvar
-            await App.Db.InserirLembreteAsync(lembrete);
-        
+            await App.Db.InserirLembrete(lembrete);
+
+
+            // Instancia do serviço de notificações
+            var service = new NotificacaoService();
 
             //  Notificação
             if (lembrete.Ativo)
             {
-                var service = new NotificacaoService();
                 service.AgendarLembrete(lembrete);
             }
+           
 
             await DisplayAlert("Sucesso", "Lembrete salvo!", "OK");
             await Navigation.PopAsync();
@@ -66,6 +69,11 @@ public partial class InsertLembretePage : ContentPage
         }
     }
 
-   
+    private async void Cancelar_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PopAsync();
+    }
+
+
 
 }

@@ -1,12 +1,15 @@
 namespace MauiAppBemEstarDigital.Views;
-
 using MauiAppBemEstarDigital.Models;
+using System.Collections.ObjectModel;
 
 public partial class LembretesPage : ContentPage
 {
-	public LembretesPage()
-	{
-		InitializeComponent();
+    private ObservableCollection<Lembrete> lista = new ObservableCollection<Lembrete>();
+
+    public LembretesPage()
+    {
+        InitializeComponent();
+        collectionViewLembretes.ItemsSource = lista;
     }
 
     private void Novo_Lembrete_Clicked(object sender, EventArgs e)
@@ -14,7 +17,6 @@ public partial class LembretesPage : ContentPage
         try
         {
             Navigation.PushAsync(new Views.InsertLembretePage());
-
         }
         catch (Exception ex)
         {
@@ -24,103 +26,73 @@ public partial class LembretesPage : ContentPage
 
     protected override async void OnAppearing()
     {
-        base.OnAppearing();
+        lista.Clear();
 
-        var lista = await App.Db
-            .ListarLembretesPorUsuarioAsync(App.UsuarioLogado.Id);
+        var lembretesDoBanco = await App.Db.ListarLembretesPorUsuarioAsync(App.UsuarioLogado.Id);
 
-        collectionViewLembretes.ItemsSource = lista;
-
-        var service = new NotificacaoService();
-
-        // Sincronizar notificações
-        foreach (var lembrete in lista)
-        {
-            if (lembrete.Ativo)
-            {
-                service.CancelarLembrete(lembrete.Id); // evita duplicar
-                service.AgendarLembrete(lembrete);
-            }
-            else
-            {
-                service.CancelarLembrete(lembrete.Id);
-            }
-        }
+        lembretesDoBanco.ForEach(l => lista.Add(l));
     }
 
     private async void IsToggled(object sender, ToggledEventArgs e)
     {
         var sw = sender as Switch;
         var lembrete = sw?.BindingContext as Lembrete;
+        if (lembrete == null) return;
 
         lembrete.Ativo = e.Value;
-
         await App.Db.AtualizarLembreteAsync(lembrete);
 
         var service = new NotificacaoService();
-    
-        if (lembrete.Ativo == false)
-        {
-            service.CancelarLembrete(lembrete.Id);
-        }
-        else
+        if (lembrete.Ativo)
         {
             service.AgendarLembrete(lembrete);
         }
+        else {
+            service.CancelarLembrete(lembrete.Id);
+        }
+            
     }
 
     private async void Excluir_Clicked(object sender, EventArgs e)
     {
         try
         {
-            // Pega o botão que disparou o evento
             var button = sender as Button;
-            if (button == null)
-                return;
-
-            // Pega o Lembrete associado ao item do CollectionView
-            var lembrete = button.BindingContext as Lembrete;
-            if (lembrete == null)
-                return;
+            Lembrete l = button.BindingContext as Lembrete;
 
             // Confirmação
             bool confirm = await DisplayAlert("Confirmar",
                 "Deseja excluir este lembrete?",
                 "Sim", "Não");
-            if (!confirm)
-                return;
 
-            // Desativa e cancela notificação
-            lembrete.Ativo = false;
-            var service = new NotificacaoService();
-            service.CancelarLembrete(lembrete.Id);
+            if (confirm) {
 
-            // Remove do banco
-            await App.Db.DeletarLembretePorIdAsync(lembrete.Id);
+                // Cancelar notificação antes de excluir
+                var service = new NotificacaoService();
+                service.CancelarLembrete(l.Id);
 
-            // Atualiza a lista do CollectionView
-            var lista = await App.Db.ListarLembretesPorUsuarioAsync(App.UsuarioLogado.Id);
-            collectionViewLembretes.ItemsSource = lista;
+                // Deletar do banco e atualizar a lista
+                await App.Db.DeletarLembretePorIdAsync(l.Id);
+                lista.Remove(l);
 
-            await DisplayAlert("Sucesso", "Lembrete deletado com sucesso!", "OK");
+            }
+            
         }
         catch (Exception ex)
         {
             await DisplayAlert("Erro", ex.Message, "OK");
         }
     }
+
     private async void Voltar_Clicked(object sender, EventArgs e)
     {
-
         try
         {
             await Navigation.PopAsync();
-
         }
         catch (Exception ex)
         {
             DisplayAlert("Ops", ex.Message, "OK");
         }
-
     }
 }
