@@ -19,6 +19,9 @@ public class NotificacaoService
             horario = horario.AddDays(1);
         }
 
+        // cancela antes de reagendar
+        LocalNotificationCenter.Current.Cancel(lembrete.Id);
+
         var notification = new NotificationRequest
         {
             NotificationId = lembrete.Id,

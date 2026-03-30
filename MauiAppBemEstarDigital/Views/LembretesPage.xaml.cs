@@ -1,6 +1,7 @@
 namespace MauiAppBemEstarDigital.Views;
 using MauiAppBemEstarDigital.Models;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 public partial class LembretesPage : ContentPage
 {
@@ -43,14 +44,15 @@ public partial class LembretesPage : ContentPage
         await App.Db.AtualizarLembreteAsync(lembrete);
 
         var service = new NotificacaoService();
-        if (lembrete.Ativo == true)
+        if (lembrete.Ativo)
         {
             service.AgendarLembrete(lembrete);
         }
-        else {
+        else
+        {
             service.CancelarLembrete(lembrete.Id);
         }
-            
+
     }
 
     private async void Excluir_Clicked(object sender, EventArgs e)
@@ -93,6 +95,26 @@ public partial class LembretesPage : ContentPage
         catch (Exception ex)
         {
             DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }
+
+    private void TimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == "Time")
+        {
+            var timePicker = sender as TimePicker;
+            var lembrete = timePicker.BindingContext as Lembrete;
+
+            var service = new NotificacaoService();
+
+            //  cancela notificação antiga
+            service.CancelarLembrete(lembrete.Id);
+
+            // atualiza horário no banco
+            App.Db.AtualizarLembrete(lembrete);
+
+            // agenda novamente
+            service.AgendarLembrete(lembrete);
         }
     }
 }

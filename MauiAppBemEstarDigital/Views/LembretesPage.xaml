@@ -33,7 +33,8 @@
                                     Toggled="IsToggled"/>
                                 </HorizontalStackLayout>
 
-                                <TimePicker Time="{Binding Horario}"/>
+                                <TimePicker Time="{Binding Horario}"
+                                 PropertyChanged="TimePicker_PropertyChanged"/>
 
                             <Button Text="Apagar"
                                     Clicked="Excluir_Clicked"

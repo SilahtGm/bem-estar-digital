@@ -33,7 +33,7 @@ namespace MauiAppBemEstarDigital
         {
             InitializeComponent();
 
-            LocalNotificationCenter.Current.CancelAll();
+            
 
             MainPage = new NavigationPage(new MauiAppBemEstarDigital.Views.LoginPage());
         }

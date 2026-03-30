@@ -88,6 +88,11 @@
                return _conn.ExecuteAsync(sql, id);
              }
 
+        public Task<int> AtualizarLembrete(Lembrete l)
+        {
+            return _conn.UpdateAsync(l);
         }
+
+    }
 
     }
