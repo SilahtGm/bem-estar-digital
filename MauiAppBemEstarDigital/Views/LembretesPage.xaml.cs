@@ -47,10 +47,13 @@ public partial class LembretesPage : ContentPage
         if (lembrete.Ativo)
         {
             service.AgendarLembrete(lembrete);
+           
+
         }
         else
         {
             service.CancelarLembrete(lembrete.Id);
+            
         }
 
     }
@@ -76,6 +79,7 @@ public partial class LembretesPage : ContentPage
                 // Deletar do banco e atualizar a lista
                 await App.Db.DeletarLembretePorIdAsync(l.Id);
                 lista.Remove(l);
+                await DisplayAlert("Removido", "Lembrete excluído com sucesso ???", "OK");
 
             }
             
@@ -107,7 +111,7 @@ public partial class LembretesPage : ContentPage
 
             var service = new NotificacaoService();
 
-            //  cancela notificação antiga
+            // cancela notificação antiga
             service.CancelarLembrete(lembrete.Id);
 
             // atualiza horário no banco
