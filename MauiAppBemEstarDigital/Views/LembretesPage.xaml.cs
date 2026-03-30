@@ -79,7 +79,7 @@ public partial class LembretesPage : ContentPage
                 // Deletar do banco e atualizar a lista
                 await App.Db.DeletarLembretePorIdAsync(l.Id);
                 lista.Remove(l);
-                await DisplayAlert("Removido", "Lembrete excluído com sucesso ???", "OK");
+                await DisplayAlert("Removido", "Lembrete excluído com sucesso!", "OK");
 
             }
             
@@ -102,22 +102,21 @@ public partial class LembretesPage : ContentPage
         }
     }
 
-    private void TimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
+    private async void TimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
     {
         if (e.PropertyName == "Time")
         {
             var timePicker = sender as TimePicker;
-            var lembrete = timePicker.BindingContext as Lembrete;
+            var lembrete = timePicker?.BindingContext as Lembrete;
+
+            if (lembrete == null) return;
 
             var service = new NotificacaoService();
 
-            // cancela notificação antiga
             service.CancelarLembrete(lembrete.Id);
 
-            // atualiza horário no banco
-            App.Db.AtualizarLembrete(lembrete);
+            await App.Db.AtualizarLembreteAsync(lembrete);
 
-            // agenda novamente
             service.AgendarLembrete(lembrete);
         }
     }
