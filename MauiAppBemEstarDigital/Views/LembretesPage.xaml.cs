@@ -43,7 +43,7 @@ public partial class LembretesPage : ContentPage
         await App.Db.AtualizarLembreteAsync(lembrete);
 
         var service = new NotificacaoService();
-        if (lembrete.Ativo)
+        if (lembrete.Ativo == true)
         {
             service.AgendarLembrete(lembrete);
         }
