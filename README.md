@@ -35,11 +35,6 @@ O desenvolvimento foi dividido por prioridades de valor de negócio e esforço e
 
 ---
 
-## 🎮 Diferenciais
-Para aumentar o engajamento, o sistema utiliza elementos de incentivo digital:
-* **Acompanhamento Holístico:** Ferramentas para saúde física e emocional (meditação/conteúdos relaxantes).
-
----
 
 ## 🛠️ Especificações Técnicas e Restrições
 * **Tecnologias:** .NET MAUI (Mobile Multiplataforma), SQLite e C#.
