@@ -91,9 +91,21 @@ namespace MauiAppBemEstarDigital.Views
         {
             base.OnAppearing();
             CarregarHistoricoIMC(); // Sempre recarrega os registros
+            lblSaudacao.Text = ObterSaudacao();
         }
 
+        public string ObterSaudacao()
+        {
+            int horaAtual = DateTime.Now.Hour;
 
+            if (horaAtual >= 6 && horaAtual < 12)
+                return "Olá, Bom dia!";
+
+            if (horaAtual >= 12 && horaAtual < 18)
+                return "Olá, Boa tarde!";
+
+            return "Olá, Boa noite!";
+        }
 
     }
 }

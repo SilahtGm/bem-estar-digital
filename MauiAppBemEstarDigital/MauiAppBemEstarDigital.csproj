@@ -57,6 +57,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiImage Remove="Resources\Images\bem-estar.webp" />
+	  <MauiImage Remove="Resources\Images\bem_estar.jpeg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\bem-estar.webp" />
+	  <None Remove="Resources\Images\bem_estar.jpeg" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />

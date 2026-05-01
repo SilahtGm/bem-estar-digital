@@ -2,151 +2,362 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiAppBemEstarDigital.Views.HomePage"
              Title="Bem-Estar"
-             BackgroundColor="#F7F9FB">
+             BackgroundColor="#F4F6F8">
 
-    <!-- Toolbar -->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Sair" Clicked="LogOut_Clicked"/>
-       
+        <ToolbarItem Text="Sair"
+                     Priority="0"
+                     Order="Primary"
+                     Clicked="LogOut_Clicked"/>
     </ContentPage.ToolbarItems>
 
     <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="25">
+        <VerticalStackLayout Padding="25" Spacing="20">
 
             <!-- HEADER -->
-            <VerticalStackLayout Spacing="5">
-                <Label Text="Olá 👋"
-                       FontSize="18"
-                       TextColor="#7B8A97"/>
+            <VerticalStackLayout>
 
-                <Label Text="Bem-Estar Digital"
-                       FontSize="26"
+
+                <Label x:Name="lblSaudacao"
+                       FontSize="22"
+                       FontAttributes="Bold"
+                       TextColor="#000"/>
+                
+                <Label Text="❤️ Bem-Estar Digital"
+                       FontSize="28"
                        FontAttributes="Bold"
                        TextColor="#1E1E1E"/>
+
+                <Label Text="Explore as diversas funcionalidades do nosso aplicativo de Bem-Estar. Cuidamos de você e da sua saúde todos os dias."
+                       FontSize="16"
+                       Opacity="0.7"
+                       Padding="4"
+                       TextColor="#000"/>
+
+
+                <Border StrokeThickness="0"
+                        BackgroundColor="#E8F5E9"
+                        StrokeShape="RoundRectangle 30"
+                        Padding="22">
+
+                    <Border.Shadow>
+                        <Shadow Brush="#22000000"
+                                Offset="0,6"
+                                Radius="12"/>
+                    </Border.Shadow>
+
+                    <VerticalStackLayout Spacing="14">
+
+                        <Label Text="Desejamos que seu dia seja leve, produtivo e cheio de energia positiva. 💛"
+                               FontSize="14"
+                               TextColor="#99000000"/>
+
+                    </VerticalStackLayout>
+                </Border>
+                
             </VerticalStackLayout>
 
-            <!-- CARD PRINCIPAL -->
-            <Frame CornerRadius="25"
-                   Padding="20"
-                   BackgroundColor="#4CAF50"
-                   HasShadow="True">
 
-                <VerticalStackLayout Spacing="10">
+            <Border StrokeShape="RoundRectangle 25"
+                    Padding="0"
+                    HeightRequest="180">
 
-                    <Label Text="Calcule seu IMC"
-                           FontSize="18"
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="16"/>
+                </Border.Shadow>
+
+                <Image 
+                    Source="bem_estar.jpg"
+                    Aspect="AspectFill"/>
+            </Border>
+            
+            
+
+            <!-- CARD IMC -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E8F5E9"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="⚖️ Calcule seu IMC"
+                           FontSize="20"
                            FontAttributes="Bold"
-                           TextColor="White"/>
+                           TextColor="#1B5E20"/>
 
-                    <Label Text="Registre rapidamente e acompanhe sua evolução"
-                           FontSize="13"
-                           TextColor="White"/>
+                    <Label Text="Registre rapidamente e acompanhe sua evolução."
+                           FontSize="14"
+                           TextColor="#4A4A4A"/>
 
                     <Button Text="Registrar IMC"
                             Clicked="Imc_Clicked"
-                            BackgroundColor="White"
-                            TextColor="#4CAF50"
-                            CornerRadius="15"
-                            HeightRequest="45"
+                            BackgroundColor="#2E7D32"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
                             FontAttributes="Bold"/>
                 </VerticalStackLayout>
+            </Border>
 
-            </Frame>
+            <!-- CARD LEMBRETES -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#FFF3E0"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="18">
 
-            <Frame CornerRadius="20"
-       Padding="15"
-       BackgroundColor="#FFA909"
-       HasShadow="True">
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,6"
+                            Radius="16"/>
+                </Border.Shadow>
 
-                <HorizontalStackLayout Spacing="10">
+                <Grid ColumnDefinitions="Auto,*,Auto"
+                      VerticalOptions="Center">
 
                     <Label Text="🔔"
-               FontSize="24"
-               VerticalOptions="Center"/>
+                           FontSize="26"
+                           VerticalOptions="Center"/>
 
-                    <VerticalStackLayout>
+                    <VerticalStackLayout Grid.Column="1"
+                                         Spacing="2">
                         <Label Text="Lembretes"
-                   FontAttributes="Bold"
-                   FontSize="16"/>
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#E65100"/>
 
                         <Label Text="Gerencie seus lembretes diários"
-                   FontSize="12"
-                   TextColor="#777"/>
+                               FontSize="13"
+                               TextColor="#6D6D6D"/>
                     </VerticalStackLayout>
 
-                    <Button Text="Abrir"
-                Clicked="Lembretes_Clicked"
-                BackgroundColor="White"
-                TextColor="#FFA909"
-                FontAttributes="Bold"
-                CornerRadius="10"
-                HorizontalOptions="EndAndExpand"/>
-                </HorizontalStackLayout>
-
-            </Frame>
+                    <Button Grid.Column="2"
+                            Text="Abrir"
+                            Clicked="Lembretes_Clicked"
+                            BackgroundColor="#FB8C00"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="15"
+                            HeightRequest="40"/>
+                </Grid>
+            </Border>
 
             <!-- HISTÓRICO -->
-            <Label Text="Seu histórico"
-                   FontSize="18"
+            <Label Text="Seu histórico de pesos"
+                   FontSize="20"
                    FontAttributes="Bold"
                    TextColor="#1E1E1E"/>
 
-            <CollectionView x:Name="cvHistoricoIMC"
-                            HeightRequest="200"
-                            Margin="0,5,0,0">
-
+            <CollectionView x:Name="cvHistoricoIMC" HeightRequest="200" Margin="0,5,0,0">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
                 </CollectionView.ItemsLayout>
-
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-
                         <!-- CARD IMC -->
-                        <Frame CornerRadius="20"
-                               Padding="15"
-                               HasShadow="True"
-                               BackgroundColor="White"
-                               WidthRequest="170">
-
+                        <Frame CornerRadius="20" Padding="15" HasShadow="True" BackgroundColor="White" WidthRequest="170">
                             <VerticalStackLayout Spacing="6">
-
                                 <!-- IMC -->
-                                <Label Text="{Binding IMC, StringFormat='IMC {0:0.0}'}"
-                                       FontSize="22"
-                                       FontAttributes="Bold"
-                                       TextColor="#4CAF50"/>
-
+                                <Label Text="{Binding IMC, StringFormat='IMC {0:0.0}'}" FontSize="22" FontAttributes="Bold" TextColor="#4CAF50"/>
                                 <!-- STATUS -->
-                                <Label Text="{Binding Status}"
-                                       FontSize="13"
-                                       TextColor="#FF7043"/>
-
+                                <Label Text="{Binding Status}" FontSize="13" TextColor="#FF7043"/>
                                 <!-- DADOS -->
-                                <Label Text="{Binding Peso, StringFormat='⚖ {0} kg'}"
-                                       FontSize="12"
-                                       TextColor="#555"/>
-
-                                <Label Text="{Binding Altura, StringFormat='📏 {0:0.00} m'}"
-                                       FontSize="12"
-                                       TextColor="#555"/>
-
-                                <Label Text="{Binding Idade, StringFormat='🎂 {0} anos'}"
-                                       FontSize="12"
-                                       TextColor="#555"/>
-
-                                <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}"
-                                       FontSize="11"
-                                       TextColor="#999"/>
-
+                                <Label Text="{Binding Peso, StringFormat='⚖ {0} kg'}" FontSize="12" TextColor="#555"/>
+                                <Label Text="{Binding Altura, StringFormat='📏 {0:0.00} m'}" FontSize="12" TextColor="#555"/>
+                                <Label Text="{Binding Idade, StringFormat='🎂 {0} anos'}" FontSize="12" TextColor="#555"/>
+                                <Label Text="{Binding Data, StringFormat='{0:dd/MM/yyyy}'}" FontSize="11" TextColor="#999"/>
                             </VerticalStackLayout>
-
                         </Frame>
-
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-
             </CollectionView>
+
+            <!-- ROTINA -->
+            <Label Text="Organize sua semana"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#1E1E1E"/>
+
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E8F5E9"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="📚 Sua Rotina"
+                           FontSize="19"
+                           FontAttributes="Bold"
+                           TextColor="#1B5E20"/>
+
+                    <Label Text="Crie e organize seus horários da semana."
+                           FontSize="14"
+                           TextColor="#4A4A4A"/>
+
+                    <Button Text="Organizar agora"
+                            BackgroundColor="#2E7D32"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- MÚSICAS -->
+            <Label Text="Momento de cuidar da sua saúde mental"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#1E1E1E"/>
+
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E8F5E9"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="🧠 Saúde mental"
+                           FontSize="19"
+                           FontAttributes="Bold"
+                           TextColor="#0D47A1"/>
+
+                    <Label Text="Player de músicas relaxantes, registre seu humor diário e meditação guiada."
+                           FontSize="14"
+                           TextColor="#4A4A4A"/>
+
+                    <Button Text="Explorar"
+                            BackgroundColor="#1565C0"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+
+
+            <Label Text="Cuide do seu corpo"
+            FontSize="20"
+            FontAttributes="Bold"
+            TextColor="#1E1E1E"/>
+
+            <Border StrokeThickness="0"
+         BackgroundColor="#FFF3E0"
+         StrokeShape="RoundRectangle 25"
+         Padding="18">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                 Offset="0,6"
+                 Radius="16"/>
+                </Border.Shadow>
+
+                <Grid ColumnDefinitions="50,*,Auto"
+           VerticalOptions="Center">
+
+                    <Label Text="🥦"
+                FontSize="26"
+                VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1"
+                              Spacing="2">
+                        <Label Text="Dietas para você, conforme oque procura!"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    TextColor="#E65100"/>
+
+                        <Label Text="Escolha a dieta ideal para o seu momento"
+                    FontSize="13"
+                    TextColor="#6D6D6D"/>
+                    </VerticalStackLayout>
+
+                    <Button Grid.Column="2"
+                 Text="Acessar"
+                 BackgroundColor="#FB8C00"
+                 TextColor="White"
+                 FontAttributes="Bold"
+                 CornerRadius="15"
+                 HeightRequest="40"/>
+                </Grid>
+            </Border>
+
+            
+            
+            
+            
+            <Border StrokeThickness="0"
+                BackgroundColor="#FFF3E0"
+                StrokeShape="RoundRectangle 25"
+                Padding="18">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,6"
+                            Radius="16"/>
+                </Border.Shadow>
+
+                <Grid ColumnDefinitions="50,*,Auto"
+                      VerticalOptions="Center">
+
+                    <Label Text="💪"
+                           FontSize="26"
+                           VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1"
+                     Spacing="2">
+                        <Label Text="Treinos e exercícios para você, conforme oque procura!"
+                               FontAttributes="Bold"
+                               FontSize="16"
+                               TextColor="#E65100"/>
+
+                        <Label Text="Escolha o treino ideal para o seu momento"
+                               FontSize="13"
+                               TextColor="#6D6D6D"/>
+                    </VerticalStackLayout>
+
+                    <Button Grid.Column="2"
+                            Text="Acessar"
+                            BackgroundColor="#FB8C00"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            CornerRadius="15"
+                            HeightRequest="40"/>
+                </Grid>
+            </Border>
+
+            <Border StrokeShape="RoundRectangle 25"
+                    Padding="0"
+                    HeightRequest="180">
+
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="16"/>
+                </Border.Shadow>
+
+                <Image 
+                    Source="academia.jpg"
+                    Aspect="AspectFill"/>
+            </Border>
 
         </VerticalStackLayout>
     </ScrollView>
