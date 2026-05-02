@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.DietPage"
+             Title="Dietas"
+             BackgroundColor="#F4F6F8">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+             Priority="0"
+             Order="Primary"
+             Clicked="Voltar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- HEADER -->
+            <VerticalStackLayout Spacing="6">
+
+                <Label Text="🥗 Plano Alimentar"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#E65100"/>
+
+                <Label Text="Escolha a dieta ideal para seu objetivo e estilo de vida."
+                       FontSize="15"
+                       Opacity="0.7"
+                       TextColor="#000"/>
+
+            </VerticalStackLayout>
+
+       
+            <Border StrokeThickness="0"
+                    BackgroundColor="#FFF3E0"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="24">
+
+                    <Label Text="🍽️ Selecione sua dieta"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#BF360C"/>
+
+                    <Picker x:Name="pickerDietas"
+                            Title="Escolha uma opção"
+                            BackgroundColor="White"
+                            TextColor="#222"
+                            HeightRequest="60">
+                            
+                        <Picker.Items>
+                        <x:String>Dieta para emagrecimento</x:String>
+                        <x:String>Dieta para ganho de massa</x:String>
+                        <x:String>Dieta low carb</x:String>
+                        <x:String>Dieta vegetariana</x:String>
+                        <x:String>Dieta para foco mental</x:String>
+                        </Picker.Items>
+                        
+                        </Picker>
+                        
+                    
+
+                    <Button Text="Ver detalhes"
+                            BackgroundColor="#FB8C00"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            FontAttributes="Bold"
+                            />
+
+                </VerticalStackLayout>
+            </Border>
+
+      
+            <Border StrokeThickness="0"
+                    BackgroundColor="White"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,6"
+                            Radius="16"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="📋 Informações da dieta"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#E65100"/>
+
+                    <Label x:Name="lblDescricaoDieta"
+                           Text="Selecione uma dieta para visualizar as informações."
+                           FontSize="14"
+                           TextColor="#555"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

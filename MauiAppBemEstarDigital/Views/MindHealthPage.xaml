@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.MindHealthPage"
+             Title="Saúde Mental"
+             BackgroundColor="#F4F6F8">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar"
+                 Priority="0"
+                 Order="Primary"
+                 Clicked="Voltar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- HEADER -->
+            <VerticalStackLayout Spacing="6">
+
+                <Label Text="🧠 Saúde Mental"
+                       FontSize="28"
+                       FontAttributes="Bold"
+                       TextColor="#0D47A1"/>
+
+                <Label Text="Cuide da sua mente com músicas relaxantes, registro de humor e meditação guiada."
+                       FontSize="15"
+                       Opacity="0.7"
+                       TextColor="#000"/>
+
+            </VerticalStackLayout>
+
+            <!-- REGISTRO DE HUMOR -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E3F2FD"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="😊 Como você está se sentindo hoje?"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#1565C0"/>
+
+                    <HorizontalStackLayout Spacing="15"
+                                           HorizontalOptions="Center">
+
+                        <Button Text="😢"
+                                FontSize="22"
+                                CornerRadius="20"
+                                BackgroundColor="White"
+                                WidthRequest="60"
+                                HeightRequest="60"/>
+
+                        <Button Text="😐"
+                                FontSize="22"
+                                CornerRadius="20"
+                                BackgroundColor="White"
+                                WidthRequest="60"
+                                HeightRequest="60"/>
+
+                        <Button Text="😊"
+                                FontSize="22"
+                                CornerRadius="20"
+                                BackgroundColor="White"
+                                WidthRequest="60"
+                                HeightRequest="60"/>
+
+                        <Button Text="😁"
+                                FontSize="22"
+                                CornerRadius="20"
+                                BackgroundColor="White"
+                                WidthRequest="60"
+                                HeightRequest="60"/>
+
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- MÚSICAS RELAXANTES -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E8EAF6"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="🎵 Músicas Relaxantes"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#3949AB"/>
+
+                    <Label Text="Ouça sons da natureza, piano suave e playlists calmantes."
+                           FontSize="14"
+                           TextColor="#4A4A4A"/>
+
+                    <Button Text="Abrir Player"
+                            BackgroundColor="#3F51B5"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- MEDITAÇÃO GUIADA -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#F3E5F5"
+                    StrokeShape="RoundRectangle 30"
+                    Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                            Offset="0,8"
+                            Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="12">
+
+                    <Label Text="🧘 Meditação Guiada"
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="#8E24AA"/>
+
+                    <Label Text="Sessões rápidas para reduzir ansiedade e melhorar foco."
+                           FontSize="14"
+                           TextColor="#4A4A4A"/>
+
+                    <Button Text="Iniciar Meditação"
+                            BackgroundColor="#8E24AA"
+                            TextColor="White"
+                            CornerRadius="20"
+                            HeightRequest="50"
+                            FontAttributes="Bold"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- HISTÓRICO -->
+            <Label Text="Seu histórico emocional"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   TextColor="#1E1E1E"/>
+
+            <CollectionView HeightRequest="180">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" ItemSpacing="12"/>
+                </CollectionView.ItemsLayout>
+
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="20"
+                               Padding="15"
+                               HasShadow="True"
+                               BackgroundColor="White"
+                               WidthRequest="140">
+
+                            <VerticalStackLayout Spacing="6"
+                                                 HorizontalOptions="Center">
+
+                                <Label Text="😊"
+                                       FontSize="28"/>
+
+                                <Label Text="01/05/2026"
+                                       FontSize="12"
+                                       TextColor="#999"/>
+
+                            </VerticalStackLayout>
+
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

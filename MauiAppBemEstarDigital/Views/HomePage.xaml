@@ -32,7 +32,8 @@
                        FontSize="16"
                        Opacity="0.7"
                        Padding="4"
-                       TextColor="#000"/>
+                       TextColor="#000"
+                       Margin="10"/>
 
 
                 <Border StrokeThickness="0"
@@ -60,7 +61,8 @@
 
             <Border StrokeShape="RoundRectangle 25"
                     Padding="0"
-                    HeightRequest="180">
+                    HeightRequest="180"
+                    MaximumHeightRequest="500">
 
                 <Border.Shadow>
                     <Shadow Brush="#22000000"
@@ -217,7 +219,7 @@
                 </VerticalStackLayout>
             </Border>
 
-            <!-- MÚSICAS -->
+            <!-- SAÚDE MENTAL --> 
             <Label Text="Momento de cuidar da sua saúde mental"
                    FontSize="20"
                    FontAttributes="Bold"
@@ -250,7 +252,8 @@
                             TextColor="White"
                             CornerRadius="20"
                             HeightRequest="50"
-                            FontAttributes="Bold"/>
+                            FontAttributes="Bold"
+                            Clicked="Navigation_SaudeMental"/>
                 </VerticalStackLayout>
             </Border>
 
@@ -280,7 +283,7 @@
 
                     <VerticalStackLayout Grid.Column="1"
                               Spacing="2">
-                        <Label Text="Dietas para você, conforme oque procura!"
+                        <Label Text="Dietas para você, conforme o que procura!"
                     FontAttributes="Bold"
                     FontSize="16"
                     TextColor="#E65100"/>
@@ -296,7 +299,8 @@
                  TextColor="White"
                  FontAttributes="Bold"
                  CornerRadius="15"
-                 HeightRequest="40"/>
+                 HeightRequest="40"
+                 Clicked="Navigation_DietPage"/>
                 </Grid>
             </Border>
 
@@ -324,7 +328,7 @@
 
                     <VerticalStackLayout Grid.Column="1"
                      Spacing="2">
-                        <Label Text="Treinos e exercícios para você, conforme oque procura!"
+                        <Label Text="Treinos e exercícios para você, conforme o que procura!"
                                FontAttributes="Bold"
                                FontSize="16"
                                TextColor="#E65100"/>
@@ -340,7 +344,8 @@
                             TextColor="White"
                             FontAttributes="Bold"
                             CornerRadius="15"
-                            HeightRequest="40"/>
+                            HeightRequest="40"
+                            Clicked="Navigation_TrainingPage"/>
                 </Grid>
             </Border>
 

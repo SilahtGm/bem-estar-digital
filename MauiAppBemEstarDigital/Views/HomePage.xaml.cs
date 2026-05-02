@@ -107,5 +107,46 @@ namespace MauiAppBemEstarDigital.Views
             return "Olá, Boa noite!";
         }
 
+
+        private void Navigation_SaudeMental (object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Views.MindHealthPage());
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Ops", ex.Message, "OK");
+            }
+        }
+
+
+        private void Navigation_DietPage (object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Views.DietPage());
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Ops", ex.Message, "OK");
+            }
+        }
+
+        private void Navigation_TrainingPage(object sender, EventArgs e)
+        {
+            try
+            {
+                Navigation.PushAsync(new Views.TrainingPage());
+
+            }
+            catch (Exception ex)
+            {
+                DisplayAlert("Ops", ex.Message, "OK");
+            }
+        }
+
     }
 }

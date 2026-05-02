@@ -14,6 +14,7 @@
                 _conn.CreateTableAsync<Usuario>().Wait();
                 _conn.CreateTableAsync<PesoUsuario>().Wait();
                 _conn.CreateTableAsync<Lembrete>().Wait();
+                _conn.CreateTableAsync<Humor>().Wait();
             }
 
 

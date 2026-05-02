@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.WelcomePage"
+             BackgroundColor="#F4F6F8"
+             Title="Bem-vindo">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="25"
+                             VerticalOptions="Center">
+
+            
+            <Label Text="🌿"
+                   FontSize="60"
+                   HorizontalOptions="Center"/>
+
+       
+            <Label Text="Bem-vindo de volta!"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1E1E1E"/>
+
+           
+            <Label Text="Ficamos muito felizes em ver você novamente 💚"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#2E7D32"
+                   FontAttributes="Bold"/>
+
+            <Label Text="Nosso aplicativo foi criado para cuidar do seu corpo e da sua mente. 
+Aqui você encontra diversas funcionalidades para transformar sua rotina e melhorar sua qualidade de vida."
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   TextColor="#555"/>
+
+           
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E8F5E9"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="20">
+
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="12"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="💪 Treinos personalizados para seu momento"
+                           FontSize="14"
+                           TextColor="#1B5E20"/>
+
+                    <Label Text="🥗 Dietas adaptadas ao que você procura"
+                           FontSize="14"
+                           TextColor="#1B5E20"/>
+
+                    <Label Text="🎵 Músicas relaxantes para foco e bem-estar"
+                           FontSize="14"
+                           TextColor="#1B5E20"/>
+
+                    <Label Text="📅 Organização da sua rotina semanal"
+                           FontSize="14"
+                           TextColor="#1B5E20"/>
+
+                    <Label Text="⚖️ Acompanhamento do seu IMC e evolução"
+                           FontSize="14"
+                           TextColor="#1B5E20"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+          
+            <Label Text="✨ Vamos começar e fazer de hoje um dia incrível!"
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#444"/>
+
+      
+            <Button Text="Ok, vamos lá! 🚀"
+                    BackgroundColor="#FF6F00"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="30"
+                    HeightRequest="55"
+                    HorizontalOptions="Fill" 
+                    Clicked="Navigation_clicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
