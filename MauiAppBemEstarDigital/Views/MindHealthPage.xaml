@@ -85,6 +85,45 @@
                 </VerticalStackLayout>
             </Border>
 
+            <!-- CARD FRAME - IMPORTANTE -->
+            <Frame CornerRadius="18"
+Padding="16"
+Margin="10,20,10,10"
+BackgroundColor="#FFF5F5"
+BorderColor="#FFCDD2"
+HasShadow="False">
+
+                <VerticalStackLayout Spacing="8">
+
+                    <HorizontalStackLayout Spacing="8"
+                        VerticalOptions="Center">
+
+                        <Label Text="⚠️"
+            FontSize="22"/>
+
+                        <Label Text="IMPORTANTE"
+            FontSize="16"
+            FontAttributes="Bold"
+            TextColor="#D32F2F"
+            TextDecorations="Underline"/>
+
+                    </HorizontalStackLayout>
+
+                    <Label Text="Este aplicativo não substitui a avaliação de um especialista."
+        FontSize="14"
+        FontAttributes="Bold"
+        TextColor="#222"
+        LineBreakMode="WordWrap"/>
+
+                    <Label Text="Os resultados exibidos são apenas sugestões informativas e não devem ser utilizados como diagnóstico, orientação médica ou parecer profissional."
+        FontSize="13"
+        TextColor="#666"
+        LineBreakMode="WordWrap"/>
+
+                </VerticalStackLayout>
+
+            </Frame>
+
             <!-- MÚSICAS RELAXANTES -->
             <Border StrokeThickness="0"
                     BackgroundColor="#E8EAF6"
