@@ -47,20 +47,23 @@
 
                     <!-- PICKER -->
                     <Border Stroke="#D1D5DB"
-                    StrokeThickness="1.5"
-                    BackgroundColor="White"
-                    StrokeShape="RoundRectangle 16"
-                    Margin="0,10">
+        StrokeThickness="1.2"
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 18"
+        HeightRequest="42"
+        HorizontalOptions="Fill"
+        Padding="0"
+        Margin="0,10">
 
                         <Picker x:Name="pickerTreinos"
-                            Title="Selecione um treino"
-                             HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            BackgroundColor="White"
-                            SelectedIndexChanged="pickerTreinos_SelectedIndexChanged"
-                            TextColor="#333"
-                            HeightRequest="20"
-                           >
+            
+            SelectedIndexChanged="pickerTreinos_SelectedIndexChanged"
+            TextColor="#333"
+            FontSize="13"
+            HeightRequest="40"
+            BackgroundColor="Transparent"
+            HorizontalOptions="Fill"
+            VerticalOptions="Center">
                             <Picker.Items>
                                 <x:String>Emagrecimento</x:String>
                                 <x:String>Ganho de Massa</x:String>
@@ -78,7 +81,7 @@
 
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Vertical"
-                           ItemSpacing="16"/>
+                           ItemSpacing="10"/>
                         </CollectionView.ItemsLayout>
 
                         <CollectionView.ItemTemplate>
