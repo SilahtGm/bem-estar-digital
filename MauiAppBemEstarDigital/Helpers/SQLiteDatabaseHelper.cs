@@ -94,6 +94,36 @@
             return _conn.UpdateAsync(l);
         }
 
+
+        public Task<int> InserirHumorAsync(Humor humor)
+        {
+            return _conn.InsertAsync(humor);
+        }
+
+        public Task<List<Humor>> ListarHumorPorUsuarioAsync(int usuarioId)
+        {
+            return _conn.Table<Humor>()
+                        .Where(h => h.U_Id == usuarioId)
+                        .OrderByDescending(h => h.Data_humor)
+                        .ToListAsync();
+        }
+
+        // Esse método trás: Existe humor desse usuário entre 00:00 e 23:59 de hoje?
+        public async Task<bool> UsuarioJaRegistrouHumorHojeAsync(int usuarioId)
+        {
+            DateTime inicioDia = DateTime.Today;
+            DateTime fimDia = inicioDia.AddDays(1);
+
+            var humor = await _conn.Table<Humor>()
+                .Where(h =>
+                    h.U_Id == usuarioId &&
+                    h.Data_humor >= inicioDia &&
+                    h.Data_humor < fimDia)
+                .FirstOrDefaultAsync();
+
+            return humor != null;
+        }
+
     }
 
     }

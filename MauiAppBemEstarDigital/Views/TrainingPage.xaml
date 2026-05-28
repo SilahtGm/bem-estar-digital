@@ -76,6 +76,119 @@
 
                     </Border>
 
+
+
+
+
+
+
+                    <VerticalStackLayout Padding="20" Spacing="16">
+
+                        <!-- Card -->
+                        <Border Stroke="#9FE1CB" StrokeThickness="1" BackgroundColor="White">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="16"/>
+                            </Border.StrokeShape>
+
+                            <VerticalStackLayout Spacing="0">
+
+                                <!-- Cabeçalho -->
+                                <VerticalStackLayout BackgroundColor="White" Padding="20" Spacing="8">
+                                    <Label Text="🩺  Antes de treinar, consulte um médico"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="#085041"/>
+                                    <Label Text="Uma avaliação médica completa garante sua segurança e melhora seus resultados."
+                               FontSize="13"
+                               TextColor="#0F6E56"
+                               LineBreakMode="WordWrap"/>
+                                </VerticalStackLayout>
+
+                                <BoxView HeightRequest="0.5" Color="#9FE1CB"/>
+
+                                <!-- Exames -->
+                                <VerticalStackLayout Padding="20,12" Spacing="12">
+
+                                    <Label Text="Exames recomendados"
+                               FontSize="11"
+                               FontAttributes="Bold"
+                               TextColor="#888780"/>
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="♥" TextColor="#0F6E56" FontSize="16"/>
+                                        <VerticalStackLayout Spacing="1">
+                                            <Label Text="Eletrocardiograma (ECG)" FontSize="14" FontAttributes="Bold" TextColor="#2C2C2A"/>
+                                            <Label Text="Avalia o ritmo e a função elétrica do coração." FontSize="12" TextColor="#5F5E5A" LineBreakMode="WordWrap"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+
+                                    <BoxView HeightRequest="0.5" Color="#D3D1C7"/>
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="🩸" FontSize="16"/>
+                                        <VerticalStackLayout Spacing="1">
+                                            <Label Text="Hemograma completo" FontSize="14" FontAttributes="Bold" TextColor="#2C2C2A"/>
+                                            <Label Text="Identifica anemia e condições que afetam o desempenho." FontSize="12" TextColor="#5F5E5A" LineBreakMode="WordWrap"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+
+                                    <BoxView HeightRequest="0.5" Color="#D3D1C7"/>
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="💧" FontSize="16"/>
+                                        <VerticalStackLayout Spacing="1">
+                                            <Label Text="Glicemia e perfil lipídico" FontSize="14" FontAttributes="Bold" TextColor="#2C2C2A"/>
+                                            <Label Text="Verifica açúcar e colesterol para exercícios seguros." FontSize="12" TextColor="#5F5E5A" LineBreakMode="WordWrap"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+
+                                    <BoxView HeightRequest="0.5" Color="#D3D1C7"/>
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="🦴" FontSize="16"/>
+                                        <VerticalStackLayout Spacing="1">
+                                            <Label Text="Avaliação ortopédica" FontSize="14" FontAttributes="Bold" TextColor="#2C2C2A"/>
+                                            <Label Text="Detecta lesões articulares ou musculares." FontSize="12" TextColor="#5F5E5A" LineBreakMode="WordWrap"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+
+                                    <BoxView HeightRequest="0.5" Color="#D3D1C7"/>
+
+                                    <HorizontalStackLayout Spacing="10">
+                                        <Label Text="⚖️" FontSize="16"/>
+                                        <VerticalStackLayout Spacing="1">
+                                            <Label Text="Avaliação física e IMC" FontSize="14" FontAttributes="Bold" TextColor="#2C2C2A"/>
+                                            <Label Text="Define a intensidade e o tipo de treino ideal." FontSize="12" TextColor="#5F5E5A" LineBreakMode="WordWrap"/>
+                                        </VerticalStackLayout>
+                                    </HorizontalStackLayout>
+
+                                </VerticalStackLayout>
+
+                                <BoxView HeightRequest="0.5" Color="#D3D1C7"/>
+
+                                <!-- Rodapé -->
+                                <HorizontalStackLayout Spacing="8" Padding="20,12" BackgroundColor="#F1EFE8">
+                                    <Label Text="ℹ️" FontSize="14"/>
+                                    <Label Text="As sugestões deste app não substituem orientação médica profissional."
+                               FontSize="12"
+                               TextColor="#5F5E5A"
+                               LineBreakMode="WordWrap"
+                               HorizontalOptions="FillAndExpand"/>
+                                </HorizontalStackLayout>
+
+                            </VerticalStackLayout>
+                        </Border>
+
+                    </VerticalStackLayout>
+
+
+
+
+
+
+
+
+
                     <!-- Cards -->
                     <CollectionView x:Name="collectionTreinos">
 
@@ -121,19 +234,39 @@
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    
 
 
 
-                    <Button Text="Iniciar treino"
-                            BackgroundColor="#FB8C00"
-                            TextColor="White"
-                            CornerRadius="20"
-                            HeightRequest="50"
-                            FontAttributes="Bold"
-                           />
+                    <Border
+                        StrokeThickness="0"
+        BackgroundColor="White"
+        StrokeShape="RoundRectangle 30"
+        Padding="20"
+        Margin="20">
+                        
+                        <Border.Shadow>
+                        <Shadow Brush="#20000000"
+                    Offset="0,6"
+                    Radius="16"/>
+                    </Border.Shadow>
 
-                </VerticalStackLayout>
+                    <VerticalStackLayout Spacing="10">
+
+                        <Label Text="📋 Informações de treinos"
+                        FontSize="18"
+                        FontAttributes="Bold"
+                        TextColor="#E65100"/>
+
+                        <Label x:Name="lblDescricaoDieta"
+                        Text="Selecione uma dieta para visualizar as informações."
+                        FontSize="14"
+                        TextColor="#555"/>
+
+                    </VerticalStackLayout>
+            </Border>
+
+
+        </VerticalStackLayout>
             </Border>
 
 

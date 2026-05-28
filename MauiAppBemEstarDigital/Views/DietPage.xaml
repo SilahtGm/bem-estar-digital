@@ -136,17 +136,28 @@ VerticalOptions="Center">
 
                             <VerticalStackLayout Spacing="10">
 
-                                <Label Text="{Binding Nome}"
+                                <Frame CornerRadius="20"
+                                Padding="18"
+                                BackgroundColor="#FFE0B2"
+                                BorderColor="#ECECEC"
+                                HasShadow="False">
+
+                                    <Label Text="{Binding Nome}"
                                    FontSize="18"
+
                                    FontAttributes="Bold"
                                    TextColor="#222"/>
 
+                                </Frame>
+
                                 <Label Text="{Binding Refeicao}"
                                    FontSize="14"
+                                       Padding="6"
                                    TextColor="#444"/>
 
                                 <Label Text="{Binding Alimentos}"
                                    FontSize="14"
+                                       Padding="6"
                                    TextColor="#444"/>
 
                                 <Frame BackgroundColor="#FFF5F5"
