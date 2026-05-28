@@ -235,7 +235,8 @@ HasShadow="False">
                             TextColor="White"
                             CornerRadius="20"
                             HeightRequest="50"
-                            FontAttributes="Bold"/>
+                            FontAttributes="Bold"
+                            Clicked="Music_Clicked"/>
                 </VerticalStackLayout>
             </Border>
 
@@ -267,7 +268,8 @@ HasShadow="False">
                             TextColor="White"
                             CornerRadius="20"
                             HeightRequest="50"
-                            FontAttributes="Bold"/>
+                            FontAttributes="Bold"
+                            Clicked="Medidation_Clicked"/>
                 </VerticalStackLayout>
             </Border>
 

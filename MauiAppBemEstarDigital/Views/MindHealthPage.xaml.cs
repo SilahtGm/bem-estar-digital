@@ -125,6 +125,32 @@ public partial class MindHealthPage : ContentPage
         }
     }
 
+    private void Music_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Navigation.PushAsync(new Views.MusicPage());
+
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }
+
+    private void Medidation_Clicked(object sender, EventArgs e)
+    {
+        try
+        {
+            Navigation.PushAsync(new Views.MeditationPage());
+
+        }
+        catch (Exception ex)
+        {
+            DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }
+
     private void Voltar_Clicked(object sender, EventArgs e)
     {
         try

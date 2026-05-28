@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.MeditationPage"
+             Title="Meditação Guiada"
+             BackgroundColor="#F4F6F8">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar" Clicked="Voltar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="🧘 Meditação Guiada"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#7B1FA2"/>
+                <Label Text="Escolha uma sessão e encontre sua paz interior."
+                       FontSize="14"
+                       TextColor="#888"/>
+            </VerticalStackLayout>
+
+            <!-- Meditação 1 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌅 Meditação para Iniciantes" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Sessão introdutória com respiração guiada. Ideal para quem está começando a praticar meditação." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 10 min  •  Iniciante" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnIniciantes" StyleId="btnIniciantes" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 2 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="😴 Meditação para Dormir" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Relaxamento profundo para acalmar a mente antes de dormir e melhorar a qualidade do sono." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 20 min  •  Relaxamento" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnDormir" StyleId="btnDormir" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 3 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🧠 Foco e Concentração" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Técnicas de mindfulness para aumentar o foco mental e a produtividade ao longo do dia." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 12 min  •  Mindfulness" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnFoco" StyleId="btnFoco" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 4 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="💆 Alívio da Ansiedade" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Meditação com respiração 4-7-8 para reduzir a ansiedade rapidamente em momentos de tensão." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 8 min  •  Ansiedade" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnAnsiedade" StyleId="btnAnsiedade" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 5 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="❤️ Amor e Autocompaixão" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Prática de loving-kindness para cultivar amor próprio, gratidão e compaixão por si e pelos outros." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 15 min  •  Autoconhecimento" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnAmor" StyleId="btnAmor" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 6 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌬 Respiração Consciente" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Exercícios de respiração diafragmática para equilibrar o sistema nervoso e reduzir o estresse." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 7 min  •  Respiração" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnRespiracao" StyleId="btnRespiracao" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 7 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌿 Conexão com a Natureza" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Visualização guiada em meio à natureza para restaurar a energia e reconectar corpo e mente." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 18 min  •  Visualização" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnNatureza" StyleId="btnNatureza" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Meditação 8 -->
+            <Border BackgroundColor="White" StrokeThickness="1" Stroke="#D0D7E2" StrokeShape="RoundRectangle 16" Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="⚡ Energia Matinal" FontSize="16" FontAttributes="Bold" TextColor="#1E1E1E"/>
+                    <Label Text="Meditação energizante para começar o dia com disposição, clareza mental e pensamento positivo." FontSize="13" TextColor="#666" LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 10 min  •  Energia" FontSize="11" TextColor="#999"/>
+                    <Button x:Name="btnEnergia" StyleId="btnEnergia" Text="▶  Assistir" BackgroundColor="#7B1FA2" TextColor="White" CornerRadius="12" HeightRequest="44" FontAttributes="Bold" Clicked="Meditacao_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -183,7 +183,7 @@
             </CollectionView>
 
             <!-- ROTINA -->
-            <Label Text="Organize sua semana"
+            <Label Text="Veja a sua hidratação ideal"
                    FontSize="20"
                    FontAttributes="Bold"
                    TextColor="#1E1E1E"/>
@@ -201,21 +201,22 @@
 
                 <VerticalStackLayout Spacing="14">
 
-                    <Label Text="📚 Sua Rotina"
+                    <Label Text="💧Hidratação ideal"
                            FontSize="19"
                            FontAttributes="Bold"
-                           TextColor="#1B5E20"/>
+                           TextColor="DarkBlue"/>
 
-                    <Label Text="Crie e organize seus horários da semana."
+                    <Label Text="Descubra quanta água você deve beber por dia."
                            FontSize="14"
                            TextColor="#4A4A4A"/>
 
-                    <Button Text="Organizar agora"
-                            BackgroundColor="#2E7D32"
+                    <Button Text="Analisar agora"
+                            BackgroundColor="DarkBlue"
                             TextColor="White"
                             CornerRadius="20"
                             HeightRequest="50"
-                            FontAttributes="Bold"/>
+                            FontAttributes="Bold"
+                            Clicked="Navigation_HydrationPage"/>
                 </VerticalStackLayout>
             </Border>
 
@@ -362,6 +363,33 @@
                 <Image 
                     Source="academia.jpg"
                     Aspect="AspectFill"/>
+            </Border>
+
+
+            <Border StrokeThickness="0"
+        BackgroundColor="#FFF8E1"
+        StrokeShape="RoundRectangle 30"
+        Padding="22">
+
+                <Border.Shadow>
+                    <Shadow Brush="#20000000"
+                Offset="0,8"
+                Radius="18"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="14">
+
+                    <Label Text="💡 Dica do Dia"
+               FontSize="19"
+               FontAttributes="Bold"
+               TextColor="#F57F17"/>
+
+                    <Label x:Name="lblDica"
+               FontSize="15"
+               TextColor="#4A4A4A"
+               LineBreakMode="WordWrap"/>
+
+                </VerticalStackLayout>
             </Border>
 
         </VerticalStackLayout>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.MusicPage"
+             Title="Músicas Relaxantes"
+             BackgroundColor="#F4F6F8">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Voltar" Clicked="Voltar_Clicked"/>
+    </ContentPage.ToolbarItems>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="16">
+
+            <!-- Header -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="🎵 Músicas Relaxantes"
+                       FontSize="26"
+                       FontAttributes="Bold"
+                       TextColor="#3949AB"/>
+                <Label Text="Escolha uma faixa e relaxe a mente."
+                       FontSize="14"
+                       TextColor="#888"/>
+            </VerticalStackLayout>
+
+            <!-- Música 1 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌊 Ondas do Mar"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Sons suaves de ondas quebrando na praia. Ideal para relaxar e aliviar o estresse do dia a dia."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 8 min  •  Sons da natureza"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnOndas"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            StyleId="btnOndas"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 2 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌧 Chuva Suave"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Chuva leve caindo no telhado. Perfeito para dormir, meditar ou focar nos estudos."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 10 min  •  Sons da natureza"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnChuva"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            StyleId="btnChuva"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 3 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🎹 Piano Suave"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Melodia delicada de piano solo. Traz serenidade e clareza mental para o seu momento."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 6 min  •  Instrumental"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnPiano"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="44"
+                            StyleId="btnPiano"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 4 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌲 Floresta Encantada"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Pássaros cantando e vento entre as árvores. Uma imersão completa na tranquilidade da natureza."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 12 min  •  Sons da natureza"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnFloresta"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            StyleId="btnFloresta"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 5 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🔔 Tigelas Tibetanas"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Vibrações harmônicas das tigelas tibetanas para meditação profunda e equilíbrio energético."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 9 min  •  Meditação"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnTigelas"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            StyleId="btnTigelas"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 6 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌙 Noite Estrelada"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Música ambiente suave com sons noturnos. Ideal para relaxar antes de dormir e acalmar os pensamentos."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 15 min  •  Ambiente"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnNoite"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            HeightRequest="44"
+                            StyleId="btnNoite"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 7 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🎷 Jazz Suave"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Jazz instrumental leve e aconchegante. Perfeito para momentos de leitura, descanso ou trabalho criativo."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 7 min  •  Instrumental"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnJazz"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            StyleId="btnJazz"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Música 8 -->
+            <Border BackgroundColor="White"
+                    StrokeThickness="1"
+                    Stroke="#D0D7E2"
+                    StrokeShape="RoundRectangle 16"
+                    Padding="16">
+                <VerticalStackLayout Spacing="6">
+                    <Label Text="🌬 Vento no Campo"
+                           FontSize="16"
+                           FontAttributes="Bold"
+                           TextColor="#1E1E1E"/>
+                    <Label Text="Som do vento suave passando por campos abertos. Transmite leveza, liberdade e paz interior."
+                           FontSize="13"
+                           TextColor="#666"
+                           LineBreakMode="WordWrap"/>
+                    <Label Text="⏱ 11 min  •  Sons da natureza"
+                           FontSize="11"
+                           TextColor="#999"/>
+                    <Button x:Name="btnVento"
+                            Text="▶  Iniciar"
+                            BackgroundColor="#3949AB"
+                            TextColor="White"
+                            CornerRadius="12"
+                            StyleId="btnVento"
+                            HeightRequest="44"
+                            FontAttributes="Bold"
+                            Clicked="Musica_Clicked"/>
+                </VerticalStackLayout>
+            </Border>
+            
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

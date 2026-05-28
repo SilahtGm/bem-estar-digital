@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.WelcomeHydrationPage"
+             BackgroundColor="#F4F6F8"
+             Title="Hidratação">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="25"
+                             VerticalOptions="Center">
+
+            <!-- Ícone Principal -->
+            <Label Text="💧"
+                   FontSize="60"
+                   HorizontalOptions="Center"/>
+
+            <!-- Título Principal -->
+            <Label Text="Hora de se Hidratar!"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1E1E1E"/>
+
+            <!-- Subtítulo -->
+            <Label Text="A água é o combustível do seu corpo 🌊"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#1976D2"
+                   FontAttributes="Bold"/>
+
+            <!-- Descrição -->
+            <Label Text="Beber água na quantidade certa é essencial para sua saúde física e mental. Aqui você pode registrar e acompanhar seu consumo diário para alcançar suas metas e garantir mais disposição."
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   TextColor="#555"/>
+
+            <!-- Caixa de Benefícios -->
+            <Border StrokeThickness="0"
+                    BackgroundColor="#E3F2FD"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="20">
+
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="12"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="🧠 Melhora a memória e a concentração"
+                           FontSize="14"
+                           TextColor="#0D47A1"/>
+
+                    <Label Text="⚡ Aumenta significativamente sua energia"
+                           FontSize="14"
+                           TextColor="#0D47A1"/>
+
+                    <Label Text="🛡️ Fortalece o sistema imunológico"
+                           FontSize="14"
+                           TextColor="#0D47A1"/>
+
+                    <Label Text="💆‍♀️ Ajuda na vitalidade da pele e do cabelo"
+                           FontSize="14"
+                           TextColor="#0D47A1"/>
+
+                    <Label Text="🔄 Auxilia na digestão e no metabolismo"
+                           FontSize="14"
+                           TextColor="#0D47A1"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Frase de Incentivo -->
+            <Label Text="✨ Que tal beber um copo de água agora mesmo?"
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#444"/>
+
+            <!-- Botão de Ação -->
+            <Button Text="Registrar Água 🚰"
+                    BackgroundColor="#0288D1"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="30"
+                    HeightRequest="55"
+                    HorizontalOptions="Fill" 
+                    Clicked="Navigation_HydrationPage"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

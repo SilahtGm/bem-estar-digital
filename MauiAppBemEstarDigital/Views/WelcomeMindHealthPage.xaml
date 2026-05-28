@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.WelcomeMindHealthPage"
+             BackgroundColor="#F4F6F8"
+             Title="Saúde Mental">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="25"
+                             VerticalOptions="Center">
+
+            <Label Text="🧘‍♀️"
+                   FontSize="60"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Cuidando da sua Mente"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1E1E1E"/>
+
+            <Label Text="Pausa, respira e sinta o momento 💜"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#7B1FA2"
+                   FontAttributes="Bold"/>
+
+            <Label Text="Sua saúde mental é a base de tudo. Aqui você encontra um espaço seguro para relaxar, escutar músicas tranquilas e entender melhor as suas emoções no dia a dia."
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   TextColor="#555"/>
+
+            <Border StrokeThickness="0"
+                    BackgroundColor="#F3E5F5"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="20">
+
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="12"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="🎧 Músicas e sons relaxantes para foco e paz"
+                           FontSize="14"
+                           TextColor="#4A148C"/>
+
+                    <Label Text="🧘 Meditações guiadas para reduzir o estresse"
+                           FontSize="14"
+                           TextColor="#4A148C"/>
+
+                    <Label Text="😊 Registro diário para expressar seu humor"
+                           FontSize="14"
+                           TextColor="#4A148C"/>
+
+                    <Label Text="📈 Acompanhamento da sua evolução emocional"
+                           FontSize="14"
+                           TextColor="#4A148C"/>
+
+                    <Label Text="💤 Ajuda prática para melhorar seu sono e ansiedade"
+                           FontSize="14"
+                           TextColor="#4A148C"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="✨ Tire um momento só para você hoje."
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#444"/>
+
+            <Button Text="Cuidar de mim agora ✨"
+                    BackgroundColor="#8E24AA"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="30"
+                    HeightRequest="55"
+                    HorizontalOptions="Fill" 
+                    Clicked="Navigation_MentalHealthPage"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

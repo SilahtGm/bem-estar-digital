@@ -90,11 +90,12 @@ public partial class LembretesPage : ContentPage
         }
     }
 
-    private async void Voltar_Clicked(object sender, EventArgs e)
+    private void Voltar_Clicked(object sender, EventArgs e)
     {
         try
         {
-            await Navigation.PopAsync();
+
+            Navigation.PushAsync(new Views.HomePage());
         }
         catch (Exception ex)
         {

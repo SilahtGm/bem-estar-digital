@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppBemEstarDigital.Views.WelcomeLembretesPage"
+             BackgroundColor="#F4F6F8"
+             Title="Lembretes">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30"
+                             Spacing="25"
+                             VerticalOptions="Center">
+
+            <Label Text="🔔"
+                   FontSize="60"
+                   HorizontalOptions="Center"/>
+
+            <Label Text="Seus Lembretes"
+                   FontSize="30"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   TextColor="#1E1E1E"/>
+
+            <Label Text="Não deixe nada importante passar ⏰"
+                   FontSize="18"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#F57F17"
+                   FontAttributes="Bold"/>
+
+            <Label Text="Organize seu dia com alertas personalizados. Configure notificações para os horários exatos das suas atividades e mantenha sua rotina sempre em dia, sem depender apenas da memória."
+                   FontSize="15"
+                   HorizontalTextAlignment="Center"
+                   LineBreakMode="WordWrap"
+                   TextColor="#555"/>
+
+            <Border StrokeThickness="0"
+                    BackgroundColor="#FFF8E1"
+                    StrokeShape="RoundRectangle 25"
+                    Padding="20">
+
+                <Border.Shadow>
+                    <Shadow Brush="#22000000"
+                            Offset="0,6"
+                            Radius="12"/>
+                </Border.Shadow>
+
+                <VerticalStackLayout Spacing="10">
+
+                    <Label Text="💧 Crie alertas rápidos para beber água"
+                           FontSize="14"
+                           TextColor="#E65100"/>
+
+                    <Label Text="💊 Lembre-se de tomar seus remédios ou vitaminas"
+                           FontSize="14"
+                           TextColor="#E65100"/>
+
+                    <Label Text="🏋️‍♂️ Defina horários específicos para seus treinos"
+                           FontSize="14"
+                           TextColor="#E65100"/>
+
+                    <Label Text="📱 Receba notificações diretas na tela do celular"
+                           FontSize="14"
+                           TextColor="#E65100"/>
+
+                    <Label Text="✅ Mantenha a consistência nos seus novos hábitos"
+                           FontSize="14"
+                           TextColor="#E65100"/>
+
+                </VerticalStackLayout>
+            </Border>
+
+            <Label Text="✨ Uma rotina organizada é o segredo para grandes resultados!"
+                   FontSize="14"
+                   HorizontalTextAlignment="Center"
+                   TextColor="#444"/>
+
+            <Button Text="Configurar Alertas 📲"
+                    BackgroundColor="#FF8F00"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    FontSize="16"
+                    CornerRadius="30"
+                    HeightRequest="55"
+                    HorizontalOptions="Fill" 
+                    Clicked="Navigation_LembretesPage"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
